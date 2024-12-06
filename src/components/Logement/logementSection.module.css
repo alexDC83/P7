@@ -1,0 +1,12 @@
+.logements {
+  margin-bottom: 40px;
+}
+
+.logementsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 50px;
+  padding: 50px;
+  background-color: #f6f6f6;
+  border-radius: 25px;
+}
