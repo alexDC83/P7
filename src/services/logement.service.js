@@ -19,8 +19,7 @@ export async function getLogement(id) {
       throw new Error('Erreur lors de la récupérations des logements');
     }
     const data = await response.json();
-   const logementSelected = data.filter((logement) => logement.id === id);
-
+   const logementSelected = data.find((logement) => logement.id === id);
     return logementSelected;
 
   } catch (error) {

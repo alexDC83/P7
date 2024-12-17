@@ -4,10 +4,12 @@ import { getLogement } from '../services/logement.service';
 import { Collapse } from '../components/Collapse';
 import { Flex } from '../components/Flex/Flex';
 import styles from './logement.module.css';
+import Gallery from '../components/Gallery';
+import Error from './Error';
 
 export const Logement = () => {
   const [logement, setLogement] = useState();
-  const [pictureSelected, setPictureSelected] = useState(0);
+  const [error, setError] = useState()
 
   const { id } = useParams();
 
@@ -15,37 +17,26 @@ export const Logement = () => {
     const fetchLogement = async (logementId) => {
       try {
         const data = await getLogement(logementId);
-        const found = data.find((item) => item.id === id);
-        setLogement(found);
+        if (!data) {
+          throw new Error('aucun logement trouvé')
+        }
+        setLogement(data);
       } catch (err) {
         console.log('error :', err);
+        setError(err)
       }
     };
 
     fetchLogement(id);
   }, [id]);
 
+  if (error) {
+    return <Error />
+  }
+
   return logement ? (
     <div>
-      <button
-        onClick={() => {
-          if (pictureSelected === 0) return;
-          setPictureSelected((currentIndex) => currentIndex - 1);
-        }}
-      >
-        -
-      </button>
-      <div className={styles.gallery}>
-        <img src={logement.pictures[pictureSelected]} alt={logement.title} />
-      </div>
-      <button
-        onClick={() => {
-          if (pictureSelected >= logement.pictures.length - 1) return;
-          setPictureSelected((currentIndex) => currentIndex + 1);
-        }}
-      >
-        >
-      </button>
+      <Gallery data={logement} />
 
       <div className={styles.header}>
         <div className={styles.titleLogement}>

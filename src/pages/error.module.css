@@ -1,0 +1,26 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 64px;
+}
+
+.title {
+  font-size: 288px;
+  color: #ff6060;
+  font-weight: 700;
+}
+
+.content {
+  font-size: 36px;
+  font-weight: 500;
+  color: #ff6060;
+}
+
+.link {
+  color: #000;
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 64px;
+}
