@@ -13,61 +13,44 @@
 }
 
 .header {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 20px;
-}
+  flex-direction: column;
 
-.titleLogement h1 {
-  font-size: 36px;
-  color: #ff6060;
-  margin-bottom: 5px;
-}
+  .title {
+    width: 100%;
 
-.titleLocation p {
-  font-size: 18px;
-  color: #ff6060;
-}
+    h1 {
+      font-size: 18px;
+    }
 
-.host {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 20px;
-}
+    h2 {
+      font-size: 14px;
+    }
+  }
 
-.host img {
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
-}
+  @media screen and (max-width: 748px) {
+    .sub-header {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
 
-.hostName {
-  color: #ff6060;
-  font-size: 18px;
-}
+      .host {
+        order: 2;
 
-.rating {
-  display: flex;
-  gap: 10px;
-}
+        span {
+          font-size: 12px;
+        }
 
-.starEmpty {
-  fill: #e3e3e3;
-}
-.tags {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 20px;
-  flex-wrap: wrap;
-}
+        img {
+          height: 32px;
+          width: 32px;
+        }
+      }
 
-.tag {
-  background-color: #ff6060;
-  color: #fff;
-  padding: 5px 30px;
-  border-radius: 10px;
-  font-size: 14px;
+      .stars {
+        order: 1;
+      }
+    }
+  }
 }
-
-

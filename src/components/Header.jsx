@@ -9,22 +9,8 @@ const Header = () => {
         <img src={kosaLogo} alt="Logo Kosa" />
       </div>
       <nav className={styles.nav}>
-        <NavLink
-          to="/"
-          className={({ isActive }) =>
-            isActive ? `${styles.navLink} ${styles.active}` : styles.navLink
-          }
-        >
-          Accueil
-        </NavLink>
-        <NavLink
-          to="/about"
-          className={({ isActive }) =>
-            isActive ? `${styles.navLink} ${styles.active}` : styles.navLink
-          }
-        >
-          A propos
-        </NavLink>
+        <NavLink className={styles.navLink} to="/">Accueil</NavLink>
+        <NavLink className={styles.navLink} to="/about">A propos</NavLink>
       </nav>
     </header>
   );

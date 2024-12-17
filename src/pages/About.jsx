@@ -1,12 +1,11 @@
 import { Hero } from '../components/Hero';
 import aboutImage from '../assets/IMG2.png';
 import { Collapse } from '../components/Collapse/';
-import { Flex } from '../components/Flex/Flex';
 const About = () => {
   return (
     <>
       <Hero backgroundImage={aboutImage} />
-      <Flex isVertical={true} gap={24} style={{ padding: '0 96px' }}>
+      <div className='contain flexDirectionColumn'>
         <Collapse title="Fiabilité">
           Les annonces postées sur Kasa garantissent une fiabilité totale. Les
           photos sont conformes aux logements, et toutes les informations sont
@@ -30,7 +29,7 @@ const About = () => {
           que les standards sont bien respectés. Nous organisons également des
           ateliers sur la sécurité domestique pour nos hôtes.
         </Collapse>
-      </Flex>
+      </div>
     </>
   );
 };

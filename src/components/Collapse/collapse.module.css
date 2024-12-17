@@ -13,7 +13,7 @@
   border: none;
   border-radius: 4px;
   transition: background-color 0.3s;
-  cursor: pointer;
+  font-size: 18px;
 }
 
 .button:hover {
@@ -24,11 +24,14 @@
   overflow: hidden;
   transition: max-height 0.3s ease-out;
   max-height: 0;
+  background-color: #f7f7f7;
+  font-size: 18px;
 }
 
 .contentOpen {
   max-height: 500px;
-  margin-top: 8px;
+  padding: 8px;
+  list-style-type: none;
 }
 
 .arrow {
@@ -39,4 +42,14 @@
 
 .arrowOpen {
   transform: rotate(180deg);
+}
+
+@media screen and (max-width: 768px) {
+  .button {
+    font-size: 13px;
+  }
+
+  .content {
+    font-size: 12px;
+  }
 }
